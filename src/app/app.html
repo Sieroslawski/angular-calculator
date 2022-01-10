@@ -1,0 +1,54 @@
+<!-- Addition -->
+<h1>Calculator App</h1>
+<form #myForm="ngForm">
+    <input [(ngModel)]="Operand1" type="text" name="inputOne" #inputOne="ngModel" minlength="1" pattern="^[0-9]\d{0,9}(\.\d{1,2})?%?$">&nbsp; + &nbsp;
+    <input [(ngModel)]="Operand2" type="text" name="inputTwo" #inputTwo="ngModel" minlength="1" pattern="^[0-9]\d{0,9}(\.\d{1,2})?%?$">
+    &nbsp;<button type="submit" (click)=doAddition() [disabled]="!myForm.form.valid">=</button><br/>
+    &nbsp;<div [(ngModel)]="resultAdd" name="theResultAdd" [hidden]="!resultAdd">{{formOperand1}} + {{formOperand2}} = {{resultAdd}}</div></form>
+<div *ngIf="inputOne?.errors?.['minlength']">This entry must have at least one number.</div>
+<div *ngIf="inputTwo?.errors?.['minlength']">This entry must have at least one number.</div>
+
+<div *ngIf="inputOne?.errors?.['required']">This field is required.</div><br/>
+<div *ngIf="inputOne?.errors?.['pattern']">Only numeric characters are allowed.</div>
+
+<!-- Subtraction -->
+<form #myForm="ngForm">
+    <input [(ngModel)]="Operand3" type="text" name="inputOne" #inputOne="ngModel" minlength="1" pattern="^[0-9]\d{0,9}(\.\d{1,2})?%?$" required>&nbsp; - &nbsp;
+    <input [(ngModel)]="Operand4" type="text" name="inputTwo" #inputTwo="ngModel" minlength="1" pattern="^[0-9]\d{0,9}(\.\d{1,2})?%?$" required>
+    &nbsp;<button type="submit" (click)=doSubtraction() [disabled]="!myForm.form.valid">=</button><br/>
+    &nbsp;<div [(ngModel)]="resultSubtract" name="theResultSubtract" [hidden]="!resultSubtract">{{formOperand1}} - {{formOperand2}} = {{resultSubtract}}</div></form>
+<div *ngIf="inputOne?.errors?.['minlength']">This entry must have at least one number.</div>
+<div *ngIf="inputTwo?.errors?.['minlength']">This entry must have at least one number.</div>
+
+<div *ngIf="inputOne?.errors?.['required']">This field is required.</div><br/>
+<div *ngIf="inputOne?.errors?.['pattern']">Only numeric characters are allowed.</div>
+
+<!-- Multiplication -->
+<form #myForm="ngForm">
+    <input [(ngModel)]="Operand5" type="text" name="inputOne" #inputOne="ngModel" minlength="1" pattern="^[0-9]\d{0,9}(\.\d{1,2})?%?$" required>&nbsp; * &nbsp;
+    <input [(ngModel)]="Operand6" type="text" name="inputTwo" #inputTwo="ngModel" minlength="1" pattern="^[0-9]\d{0,9}(\.\d{1,2})?%?$" required>
+    &nbsp;<button type="submit" (click)=doMultiplication() [disabled]="!myForm.form.valid">=</button><br/>
+    &nbsp;<div [(ngModel)]="resultMultiply" name="theResultMultiply" [hidden]="!resultMultiply">{{formOperand1}} * {{formOperand2}} = {{resultMultiply}}</div></form>
+<div *ngIf="inputOne?.errors?.['minlength']">This entry must have at least one number.</div>
+<div *ngIf="inputTwo?.errors?.['minlength']">This entry must have at least one number.</div>
+
+<div *ngIf="inputOne?.errors?.['required']">This field is required.</div><br/>
+<div *ngIf="inputOne?.errors?.['pattern']">Only numeric characters are allowed.</div>
+
+<!-- Division -->
+<form #myForm="ngForm">
+    <input [(ngModel)]="Operand7" type="text" name="inputOne" #inputOne="ngModel" minlength="1" pattern="^[0-9]\d{0,9}(\.\d{1,2})?%?$" required>&nbsp; / &nbsp;
+    <input [(ngModel)]="Operand8" type="text" name="inputTwo" #inputTwo="ngModel" minlength="1" pattern="^[0-9]\d{0,9}(\.\d{1,2})?%?$" required>
+    &nbsp;<button type="submit" (click)=doDivision() [disabled]="!myForm.form.valid">=</button><br/>
+    &nbsp;<div [(ngModel)]="resultDivide" name="theResultDivide" [hidden]="!resultDivide">{{formOperand1}} / {{formOperand2}} = {{resultDivide}}</div></form>
+<div *ngIf="inputOne?.errors?.['minlength']">This entry must have at least one number.</div>
+<div *ngIf="inputTwo?.errors?.['minlength']">This entry must have at least one number.</div>
+
+<div *ngIf="inputOne?.errors?.['required']">This field is required.</div><br/>
+<div *ngIf="inputOne?.errors?.['pattern']">Only numeric characters are allowed.</div>
+
+
+
+
+
+              
